@@ -4,6 +4,8 @@ plugins {
 	id 'idea'
 }
 
+sourceCompatibility ='17'
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -12,6 +14,8 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+	testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+
 		// https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all
 		testImplementation 'org.hamcrest:hamcrest-all:1.3'
 }
