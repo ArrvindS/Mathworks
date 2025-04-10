@@ -6,20 +6,29 @@ import java.util.List;
 class PerfectCondition implements Condition{
 
 	public boolean matches(int number) {
-	    if (number > 0) {
-	        List<Integer> factors = new ArrayList<>();
-	        for (int i = 1; i <= number; i++) {
-	            if (number % i == 0) {
-	                factors.add(i);
-	            }
-	        }
-	        int sumOfFactors = 0;
-	        for (Integer i : factors) {
-	            sumOfFactors += i;
-	        }
-	        return sumOfFactors - number == number;
-	    }
-	    return false;
+        if (number <= 0)
+            return false;
+
+        int sumOfFactors = sum(factors(number));
+        return sumOfFactors - number == number;
+    }
+
+	private static int sum(List<Integer> numbers) {
+		int sum = 0;
+		for (Integer number : numbers) {
+			sum += number;
+		}
+		return sum;
+	}
+
+	private static List<Integer> factors(int number) {
+		List<Integer> factors = new ArrayList<>();
+		for (int i = 1; i <= number; i++) {
+			if (number % i == 0) {
+				factors.add(i);
+			}
+		}
+		return factors;
 	}
 
 }
