@@ -75,11 +75,11 @@ public class Numbers {
         return new Numbers(inRange(numbers,low,high));
     }
 
-    public int multiply() {
-        return multiply(numbers);
+    public int multiplication() {
+        return multiplication(numbers);
     }
 
-    private int multiply(List<Integer> numbers) {
+    private int multiplication(List<Integer> numbers) {
         int multiply = 1;
         for(Integer number : numbers) {
             multiply *= number;
@@ -87,10 +87,10 @@ public class Numbers {
         return multiply;
     }
 
-    public Numbers multiplyWithFactor(int factor) {
-        return new Numbers(multiplyWithFactor(numbers,factor));
+    public Numbers multiplicationWithFactor(int factor) {
+        return new Numbers(multiplicationWithFactor(numbers,factor));
     }
-    private List<Integer> multiplyWithFactor(List<Integer> numbers, int factor){
+    private List<Integer> multiplicationWithFactor(List<Integer> numbers, int factor){
         List<Integer> multipliedList = new ArrayList<>();
         for (Integer number : numbers) {
                 number *= factor;
