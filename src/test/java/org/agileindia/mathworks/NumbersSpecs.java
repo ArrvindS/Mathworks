@@ -85,29 +85,29 @@ public class NumbersSpecs {
         assertThat(sumOfNumbers,equalTo(27));
     }
     @Test
-    public void itSelectsNumbersWithinInRange(){
+    public void itSelectsNumbersWithinInBetween(){
 
         Numbers numbers = new Numbers(5,7,10,15);
 
-        Numbers  numberWithinRange = numbers.inRange(5,10);
+        Numbers  numberWithinRange = numbers.inBetween(5,10);
 
         assertThat(numberWithinRange.hasItems(5,7,10),is(true));
     }
     @Test
-    public void toLearnMultiplicationOfNumbers(){
+    public void toLearnMultiplyOfNumbers(){
 
         Numbers numbers = new Numbers(5,7,10,5);
 
-        int valueafterMultiplication = numbers.multiplication();
+        int valueafterMultiplication = numbers.multiply();
 
         assertThat(valueafterMultiplication,equalTo(1750));
     }
     @Test
-    public void toLearnMultiplicationWithFactorForNumbers(){
+    public void toLearnMultiplyByForNumbers(){
 
         Numbers numbers = new Numbers(5,7,10,15);
 
-        Numbers multipliedList = numbers.multiplicationWithFactor(10);
+        Numbers multipliedList = numbers.multiplyBy(10);
 
         assertThat(multipliedList.hasItems(50,70,100,150),is(true));
     }

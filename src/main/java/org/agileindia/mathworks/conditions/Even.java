@@ -1,6 +1,6 @@
 	package org.agileindia.mathworks.conditions;
 
-class EvenCondition implements Condition {
+class Even implements Condition {
 
 	@Override
 	public boolean matches(int number) {

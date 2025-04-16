@@ -26,24 +26,9 @@ public class Numbers {
         }
         return selected;
 	}
-    public Integer sum(List<Integer> numbers){
-        int sum = 0;
-        for(Integer number : numbers) {
-            sum += number;
-        }
-        return sum;
-    }
-    private static boolean inRange(int number, int low, int high){
+
+    private static boolean inBetween(int number, int low, int high){
         return (low <= number && number <= high);
-    }
-    public static List<Integer> inRange(List<Integer> numbers, int low , int high){
-        List<Integer> selected = new ArrayList<>();
-        for (Integer number : numbers) {
-            if (inRange(number,low,high)) {
-                selected.add(number);
-            }
-        }
-        return selected;
     }
 
 
@@ -68,18 +53,24 @@ public class Numbers {
     }
 
     public int sum() {
-        return sum(numbers);
+        int sum = 0;
+        for(Integer number : numbers) {
+            sum += number;
+        }
+        return sum;
     }
 
-    public Numbers inRange(int low, int high) {
-        return new Numbers(inRange(numbers,low,high));
+    public Numbers inBetween(int low, int high) {
+        List<Integer> selected = new ArrayList<>();
+        for (Integer number : numbers) {
+            if (inBetween(number, low, high)) {
+                selected.add(number);
+            }
+        }
+        return new Numbers(selected);
     }
 
-    public int multiplication() {
-        return multiplication(numbers);
-    }
-
-    private int multiplication(List<Integer> numbers) {
+    public int multiply() {
         int multiply = 1;
         for(Integer number : numbers) {
             multiply *= number;
@@ -87,16 +78,13 @@ public class Numbers {
         return multiply;
     }
 
-    public Numbers multiplicationWithFactor(int factor) {
-        return new Numbers(multiplicationWithFactor(numbers,factor));
-    }
-    private List<Integer> multiplicationWithFactor(List<Integer> numbers, int factor){
+    public Numbers multiplyBy(int factor) {
         List<Integer> multipliedList = new ArrayList<>();
         for (Integer number : numbers) {
                 number *= factor;
                 multipliedList.add(number);
 
         }
-        return multipliedList;
+        return new Numbers(multipliedList);
     }
 }

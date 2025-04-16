@@ -1,6 +1,6 @@
 package org.agileindia.mathworks.conditions;
 
-public class PrimeCondition implements Condition {
+public class Prime implements Condition {
     @Override
     public boolean matches(int number) {
         {

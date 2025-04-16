@@ -3,7 +3,7 @@ package org.agileindia.mathworks.conditions;
 import java.util.ArrayList;
 import java.util.List;
 
-class PerfectCondition implements Condition{
+class Perfect implements Condition{
 
 	public boolean matches(int number) {
         if (number <= 0)
