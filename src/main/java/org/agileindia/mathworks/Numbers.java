@@ -28,11 +28,13 @@ public class Numbers {
 	}
 
     private static boolean inBetween(int number, int low, int high){
+
         return (low <= number && number <= high);
     }
 
 
     public Numbers select(Condition condition) {
+
         return new Numbers(select(numbers, condition));
     }
 
@@ -41,6 +43,7 @@ public class Numbers {
     }
 
     public boolean hasItems(int... items) {
+
         return numbers.containsAll(toList(items));
     }
 
@@ -53,11 +56,11 @@ public class Numbers {
     }
 
     public int sum() {
-        int sum = 0;
+        int result = 0;
         for(Integer number : numbers) {
-            sum += number;
+            result += number;
         }
-        return sum;
+        return result;
     }
 
     public Numbers inBetween(int low, int high) {
@@ -71,20 +74,43 @@ public class Numbers {
     }
 
     public int multiply() {
-        int multiply = 1;
+        int product = 1;
         for(Integer number : numbers) {
-            multiply *= number;
+            product *= number;
         }
-        return multiply;
+        return product;
     }
 
     public Numbers multiplyBy(int factor) {
-        List<Integer> multipliedList = new ArrayList<>();
+        List<Integer> resultedList = new ArrayList<>();
         for (Integer number : numbers) {
                 number *= factor;
-                multipliedList.add(number);
+                resultedList.add(number);
 
         }
-        return new Numbers(multipliedList);
+        return new Numbers(resultedList);
+    }
+
+    public Numbers square() {
+        List<Integer> squaredList=new ArrayList<>();
+
+        for(Integer number : numbers){
+
+            number *= number;
+            squaredList.add(number);
+        }
+        return new Numbers(squaredList);
+    }
+
+    public int findFirstOccurance(int numberTobeFound) {
+
+        for(Integer number : numbers){
+
+            if(number == numberTobeFound)
+                return numbers.indexOf(number) + 1;
+
+        }
+        return -1;
+
     }
 }

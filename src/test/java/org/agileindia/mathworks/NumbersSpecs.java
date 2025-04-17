@@ -112,4 +112,34 @@ public class NumbersSpecs {
         assertThat(multipliedList.hasItems(50,70,100,150),is(true));
     }
 
+    @Test
+    public void toLearnSquaresOfGivenNumbers(){
+
+        Numbers numbers = new Numbers(1,2,3,5);
+
+        Numbers squares = numbers.square();
+
+        assertThat(squares.hasItems(1,4,9,25),is(true));
+    }
+
+    @Test
+    public void toLearnFirstOccurrencePosition(){
+
+        Numbers numbers = new Numbers(3,1,2,1,5);
+
+        int firstOccurrence = numbers.findFirstOccurance(2);
+
+        assertThat(firstOccurrence,equalTo(3));
+    }
+
+    @Test
+    public void toLearnFirstOccurrencePosition_2(){
+
+        Numbers numbers = new Numbers(3,1,2,1,5);
+
+        int firstOccurrence = numbers.findFirstOccurance(10);
+
+        assertThat(firstOccurrence,equalTo(-1));
+    }
+
 }
